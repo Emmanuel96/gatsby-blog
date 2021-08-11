@@ -11,7 +11,7 @@ const BlogPage = ({data}) =>{
             {
                 data.allCockpitBlogs.nodes.map( node=>(
                     <article key = {node.id} style={{marginBottom: 10 + 'px'}} >
-                            <Link to={`/blog/${node.id}`}>
+                            <Link to={`/blog/${node.cockpitId}`}>
                                 {node.title.value}
                             </Link>
                             {/* {node.cockpitCreated} */}
@@ -35,6 +35,9 @@ query {
           value
         }
         published {
+          value
+        }
+        slug{
           value
         }
         id

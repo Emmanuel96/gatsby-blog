@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "http://localhost:8000",
+    // siteUrl: "http://localhost:8000",
     title: "Procause-blog",
   },
   plugins: [
