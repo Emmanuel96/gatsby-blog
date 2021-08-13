@@ -1,0 +1,85 @@
+/* 06.02. Home Two Intro CSS */
+
+.intro2-section {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    margin-top: 65px;
+
+    & .container {
+        z-index: 9;
+    }
+
+    & .section-bottom-shape {
+        transform: rotateX(180deg);
+    }
+
+    @media #{$large-mobile} {
+        height: auto;
+
+        background-position: left top;
+    }
+}
+
+.intro2-content {
+    max-width: 460px;
+    // Responsive
+    @media #{$large-mobile}{
+        max-width: 100%;
+    }
+    & .title {
+        font-size: 48px;
+        line-height: 1.17;
+        color: $secondary;
+    }
+
+    & .desc {
+        max-width: 540px;
+        margin-top: 12px;
+
+        & p {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.67;
+            color: #8c89a2;
+        }
+    }
+
+    & .btn {
+        margin-top: 35px;
+    }
+
+    & .link{
+        display: block;
+        font-size: 15px;
+        margin-top: 25px;
+    }
+
+    @media #{$tablet-device,
+    $large-mobile
+    } {
+        & .title {
+            font-size: 36px;
+        }
+
+        & .desc {
+            & p {
+                font-size: 16px;
+            }
+        }
+    }
+
+    @media #{$extra-small-mobile} {
+
+        & .title {
+            font-size: 30px;
+        }
+
+        & .desc {
+            & p {
+                font-size: 14px;
+            }
+        }
+    }
+}

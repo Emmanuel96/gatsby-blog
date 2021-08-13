@@ -1,0 +1,315 @@
+/* 09.03. Blog Three CSS */
+
+.blog-3 {
+    height: 100%;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+
+    transition: $transition;
+
+    border-bottom: 1px solid $border-color;
+
+    & .thumbnail {
+        position: relative;
+
+        overflow: hidden;
+
+        border-radius: 5px;
+
+        & .image {
+            display: block;
+
+            & img {
+                width: 100%;
+
+                transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+    }
+
+    & .info {
+        position: relative;
+
+        padding: 30px 0 0;
+
+        & .category {
+            font-size: 15px;
+            font-weight: 500;
+
+            display: block;
+
+            margin: 0 0 15px;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: $secondary-light;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+
+        & .title {
+            font-size: 34px;
+            line-height: 1.42;
+
+            margin: 0;
+
+            & a {
+            }
+        }
+
+        & .meta {
+            font-size: 14px;
+
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            margin-top: 10px;
+            margin-right: -28px;
+            margin-bottom: 0;
+            padding-left: 0;
+
+            list-style: none;
+
+            & li {
+                margin-top: 5px;
+                margin-right: 28px;
+
+                & i {
+                    margin-right: 10px;
+                }
+
+                & .avatar {
+                    width: 32px;
+                    height: 32px;
+                    margin-right: 8px;
+
+                    border-radius: 50%;
+                }
+
+                & a {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        & .desc {
+            margin-top: 16px;
+            .block-quote{
+                border-left: 4px solid $primary;
+                padding-left: 20px;
+                margin: 50px 0 44px 48px;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 1.78;
+                max-width: 660px;
+                // Responsive
+                @media #{$large-mobile}{
+                    margin: 25px 0 20px 0px;
+                }
+            }
+        }
+
+        & .entry-post-tags{
+            display: flex;
+            .tag-label{
+                margin: 0 7px 0 0;
+            }
+        }
+
+        & .post-share {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            & .label {
+                font-weight: 500;
+
+                margin-right: 15px;
+            }
+
+            & .media {
+                position: relative;
+
+                & .icon {
+                    width: 52px;
+                    height: 52px;
+
+                    cursor: pointer;
+                    transition: $transition;
+                    text-align: center;
+
+                    color: $primary;
+                    border: 2px solid #EDEDED;
+                    border-radius: 50%;
+
+                    & i {
+                        font-size: 18px;
+                        line-height: 48px;
+                    }
+                }
+
+                & .list {
+                    position: absolute;
+                    z-index: 999;
+                    right: 0;
+                    bottom: 100%;
+
+                    display: flex;
+                    visibility: hidden;
+
+                    width: auto;
+                    padding: 0 4px;
+
+                    user-select: none;
+                    transition: $transition;
+                    transform: translateY(-10px);
+                    white-space: nowrap;
+
+                    opacity: 0;
+                    border-radius: 5px;
+                    background: $white;
+                    box-shadow: 0 2px 20px rgba($black, 0.06);
+
+                    filter: drop-shadow(0 2px 20px rgba($black, 0.06));
+
+                    &::before {
+                        position: absolute;
+                        top: 100%;
+                        right: 20px;
+
+                        content: "";
+
+                        border-top: 8px solid $white;
+                        border-right: 9px solid transparent;
+                        border-left: 9px solid transparent;
+                    }
+
+                    & a {
+                        display: flex;
+
+                        padding: 16px 12px;
+
+                        color: #ABABAB;
+
+                        &:hover {
+                            color: $primary;
+                        }
+
+                        & i {
+                        }
+                    }
+                }
+
+                &:hover {
+                    & .icon {
+                        color: $white;
+                        border-color: transparent;
+                        background-color: $primary;
+                    }
+
+                    & .list {
+                        visibility: visible;
+
+                        transform: translateY(-20px);
+
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &:hover {
+        & .thumbnail {
+            & .image {
+                & img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    @media #{$large-mobile} {
+        & .info {
+            & .title {
+                font-size: 24px;
+            }
+        }
+    }
+
+    @media #{$extra-small-mobile} {
+        & .post-share {
+            & .label {
+                display: none;
+            }
+        }
+    }
+}
+
+
+.blog-list-post{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li{
+        & + li{
+            margin: 20px 0 0;
+        }
+        a{
+            position: relative;
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.78;
+            font-family: $heading-font;
+            color: $secondary;
+            padding-left: 30px;
+
+            &::before,
+            &::after {
+                font-family: $fontAwesome5Pro;
+                font-size: 15px;
+                line-height: 15px;
+
+                position: absolute;
+                top: 5px;
+                left: 0;
+
+                content: "\f30b";
+                transition: $transition;
+            }
+
+            &::after {
+                visibility: hidden;
+
+                transform: translateX(-100%);
+
+                opacity: 0;
+                color: $primary;
+            }
+
+            &:hover {
+                &::before {
+                    visibility: hidden;
+
+                    transform: translateX(100%);
+
+                    opacity: 0;
+                }
+
+                &::after {
+                    visibility: visible;
+
+                    transform: translateX(0);
+
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

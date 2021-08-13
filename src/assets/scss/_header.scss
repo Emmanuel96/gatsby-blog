@@ -1,0 +1,163 @@
+/*----------------------------------------*/
+/*  05. Header CSS
+/*----------------------------------------*/
+
+/* Header Section */
+.header-section {
+    z-index: 9999;
+
+    min-height: 80px;
+
+    & .header-inner {
+        z-index: 9999;
+
+        display: flex;
+        align-items: center;
+
+        min-height: 80px;
+
+        background-color: $white;
+    }
+    &.is-sticky {
+        &.header-sticky-bg-dark{
+            .header-inner{
+                background-color: #000 !important;
+            }
+        }
+        & .header-inner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: $white !important;
+            width: 100%;
+
+            animation: headerSlideDown 0.95s ease forwards;
+
+            box-shadow: 0 8px 20px 0 rgba($black, 0.1);
+        }
+    }
+
+    // Header Fluid
+    &.header-fluid {
+        & .container {
+            max-width: 100%;
+
+            @media #{$extraBig-device} {
+                padding-right: 150px;
+                padding-left: 150px;
+            }
+        }
+    }
+    &.header-fluid-two {
+        & .container {
+            max-width: 100%;
+
+            @media #{$extraBig-device} {
+                padding-right: 240px;
+                padding-left: 240px;
+            }
+        }
+    }
+
+    // Header Shadow
+    &.header-shadow {
+        & .header-inner {
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    // Header Transparent
+    &.header-transparent {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+
+        & .header-inner {
+            background-color: transparent;
+        }
+    }
+
+    // Header Light
+    &.header-light {
+        & .header-login {
+            & a {
+                color: $white;
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+@keyframes headerSlideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@import "header/logo";
+
+/* Header Right */
+.header-right {
+    & > .inner {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        margin: 0 -10px;
+    }
+
+    @media #{$extra-small-mobile} {
+        & > .inner {
+            margin: 0 -8px;
+        }
+    }
+}
+
+@import "header/cart";
+
+.header-login {
+    & a {
+        line-height: 1;
+
+        display: flex;
+
+        padding: 6px 10px;
+
+        color: #111111;
+
+        & i {
+            font-size: 18px;
+        }
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    @media #{$extra-small-mobile} {
+        & a {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+    }
+}
+
+
+
+@import "header/header-top";
+@import "header/language";
+@import "header/social";
+@import "header/search";
+@import "header/main-menu";
+@import "header/mobile-menu-toggle";
+@import "header/mobile-menu";

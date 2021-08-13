@@ -1,0 +1,39 @@
+/* 04.06 Coaching Box CSS */
+
+.coaching-box{
+    &.padding-top-50{
+        padding-top: 50px;
+        // Responsive
+        @media #{$tablet-device}{
+            padding-top: 0;
+        }
+        @media #{$large-mobile}{
+            padding-top: 0;
+        }
+    }
+    &.cooking-box{
+        .image{
+            margin-bottom: 20px;
+        }
+        .content{
+            .title{
+                font-family: $playfair-font;
+                font-weight: 400;
+            }
+        }
+    }
+    .image{
+        margin-bottom: 12px;
+        img{
+
+        }
+    }
+    .content{
+        .title{
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+    }
+}

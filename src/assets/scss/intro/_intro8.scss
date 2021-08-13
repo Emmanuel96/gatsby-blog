@@ -1,0 +1,162 @@
+/* 06.08. Home Eight Intro CSS */
+
+.intro8-section {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    // Responsive
+    @media #{$laptop-device}{
+        height: 100vh;
+    }
+    @media #{$desktop-device}{
+        height: 780px;
+    }
+    @media #{$tablet-device}{
+        height: 780px;
+    }
+    @media #{$large-mobile}{
+        height: 700px;
+    }
+
+}
+
+.intro8-content {
+    max-width: 670px;
+    padding: 60px 0 30px;
+    // Responsive
+    @media #{$desktop-device}{
+        max-width: 470px;
+        padding: 60px 0 30px;
+    }
+    @media #{$tablet-device}{
+        max-width: 470px;
+        padding: 60px 0 30px;
+    }
+    @media #{$large-mobile}{
+        max-width: 470px;
+        padding: 60px 0 30px;
+    }
+    & > * {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-name: fadeOutUp;
+    }
+    & .label {
+        display: inline-block;
+        padding: 6px 15px 3px;
+        border-radius: 5px;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: .65px;
+        color: #201c3f;
+        background-color: #eab75f;
+        margin: 0 0 28px;
+    }
+
+    & .title {
+        font-size: 60px;
+        font-weight: 600;
+        line-height: 1.27;
+        color: $white;
+        // Responsive
+        @media #{$desktop-device}{
+            font-size: 48px;
+        }
+        @media #{$tablet-device}{
+            font-size: 48px;
+        }
+        @media #{$large-mobile}{
+            font-size: 36px;
+        }
+    }
+
+    & p{
+        font-size: 18px;
+        line-height: 1.67;
+        color: rgba(255,255,255,.7);
+        margin: 18px 0 0;
+        // Responsive
+        @media #{$large-mobile}{
+            font-size: 15px;
+        }
+    }
+
+    & .btn {
+        margin-top: 40px;
+    }
+}
+
+.intro8-slide-pages{
+    position: absolute;
+    top: 30%;
+    right: 10px;
+    font-size: 24px;
+    color: rgba(255,255,255,.7);
+    font-weight: 600;
+    letter-spacing: 3.2px;
+    display: flex;
+    align-items: center;
+    // Responsive
+    @media #{$large-mobile}{
+        display: none;
+    }
+    .current{
+        font-size: 60px;
+        line-height: 1;
+        color: $white;
+    }
+}
+
+
+.swiper-slide-active{
+    /*-- Hero Content Two For Hero Slider --*/
+    & .intro8-content {
+
+        // All Element Selector
+        & > * {
+            animation-name: fadeInUp;
+            
+            // Child Selector
+            &:nth-child(1) {
+                animation-delay: 0.5s;
+            }
+            &:nth-child(2) {
+                animation-delay: 1s;
+            }
+            &:nth-child(3) {
+                animation-delay: 1.5s;
+            }
+            &:nth-child(4) {
+                animation-delay: 2s;
+            }
+            &:nth-child(5) {
+                animation-delay: 2.5s;
+            }
+            &:nth-child(6) {
+                animation-delay: 3s;
+            }
+            
+        }
+    }
+}
+
+
+.intro8-section-wrap{
+    .intro8-section{
+        transform: scale(1.35);
+        transform:scale(1.35);
+        backface-visibility: hidden
+    }
+}
+
+
+.swiper-slide-active {
+    .intro8-section{
+        transform: scale(1);
+        transition: transform 11s cubic-bezier(.1,.2,.7,1)
+    }
+}
+

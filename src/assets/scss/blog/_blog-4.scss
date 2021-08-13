@@ -1,0 +1,160 @@
+/* 09.04. Blog Four CSS */
+
+.blog-4 {
+    height: 100%;
+
+    transition: $transition;
+    margin-bottom: 30px;
+
+    & .thumbnail {
+        position: relative;
+
+        overflow: hidden;
+
+        border-radius: 5px;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .5;
+            background-image: linear-gradient(180deg,rgba(51,51,51,0) 11%,#000 80%);
+            z-index: 9;
+        }
+        & .image {
+            display: block;
+            & img {
+                width: 100%;
+
+                transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+
+        .post-overlay-content{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            padding: 20px 20px 15px;
+            // Responsive
+            @media #{$extra-small-mobile}{
+                padding: 20px 15px 15px;
+            }
+            & .meta {
+                font-size: 14px;
+                color: rgba(255,255,255,.8);
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+    
+                margin-top: 0px;
+                margin-right: -28px;
+                margin-bottom: 0;
+                padding-left: 0;
+    
+                list-style: none;
+    
+                & li {
+                    margin-bottom: 5px;
+                    padding: 0 13px;
+    
+                    & i {
+                        margin-right: 10px;
+                    }
+    
+                    & a {
+                        position: relative;
+                        font-size: 15px;
+                        font-weight: 500;
+                        color: $white;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        &::after{
+                            content: '';
+                            width: 0;
+                            height: 1px;
+                            position: absolute;
+                            left: auto;
+                            right: 0;
+                            bottom: 0;
+                            transition: width .6s cubic-bezier(.25,.8,.25,1) 0s;
+                            background: $white;
+                        }
+                        &:hover{
+                            &::after{
+                                width: 100%;
+                                left: 0;
+                                right: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .info {
+        position: relative;
+
+        padding: 20px 0 0;
+
+        & .title {
+            font-size: 34px;
+            line-height: 1.42;
+            color: $white;
+            margin: 0;
+            // Responsive
+            @media #{$desktop-device}{
+                font-size: 26px;
+            }
+            @media #{$large-mobile}{
+                font-size: 26px;
+            }
+            @media #{$extra-small-mobile}{
+                font-size: 24px;
+            }
+            & a {
+            }
+        }
+
+        & .desc {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            p{
+                font-size: 14px;
+                font-weight: 500;
+                margin-top: 10px;
+            }
+        }
+        & .blog-btn{
+            position: relative;
+            font-size: 14px;
+            font-weight: 700;
+            transition: $transition;
+            color: $primary;
+            i{
+                margin-left: 14px;
+                vertical-align: middle;
+            }
+            &:hover{
+                
+            }
+        }
+    }
+
+    &:hover {
+        & .thumbnail {
+            & .image {
+                & img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    
+    
+}

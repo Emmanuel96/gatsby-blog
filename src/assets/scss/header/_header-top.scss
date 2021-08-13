@@ -1,0 +1,86 @@
+/* 05.01 Header Top CSS */
+
+.header-top-section{
+    padding: 10px 0;
+}
+
+.header-top-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // Responsive
+    @media #{$large-mobile}{
+        flex-wrap: wrap;
+    }
+    p{
+        margin-right: 30px;
+        margin-bottom: 0;
+        // Responsive
+        @media #{$tablet-device}{
+            margin-right: 18px;
+        }
+        @media #{$large-mobile}{
+            margin-right: 0px;
+            margin-bottom: 15px;
+        }
+        @media #{$extra-small-mobile}{
+            text-align: center;
+        }
+    }
+    .header-top-countdown{
+        .countdown-item{
+            &:first-child{
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.header-top-countdown{
+    display: flex;
+    align-items: center;
+    margin-right: 45px;
+    // Responsive
+    @media #{$tablet-device}{
+        margin-right: 20px;
+    }
+    @media #{$extra-small-mobile}{
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+    .ht-icon{
+        margin-right: 5px;
+        i{
+            font-size: 18px;
+            color: $secondary;
+        }
+    }
+    .countdown-item{
+        position: relative;
+        padding: 0 5px;
+        margin: 0 5px;
+        &.before-none{
+            &::before{
+                display: none;
+            }
+        }
+        &::before{
+            position: absolute;
+            top: 50%;
+            left: -8px;
+            content: ':';
+            font-size: 18px;
+            font-weight: 700;
+            color: $secondary;
+            transform: translateY(-50%);
+        }
+        span{
+            font-size: 18px;
+            color: $secondary;
+            font-weight: 700;
+            line-height: 1;
+        }
+    }
+}

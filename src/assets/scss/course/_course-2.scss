@@ -1,0 +1,126 @@
+/* 08.02. Course Two CSS */
+
+.course-2 {
+    overflow: hidden;
+
+    height: 100%;
+
+    transition: $transition;
+
+    border-radius: 5px;
+    background-color: #FAF8F6;
+
+    & .thumbnail {
+        position: relative;
+
+        overflow: hidden;
+
+        & .image {
+            display: block;
+
+            & img {
+                width: 100%;
+
+                transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+    }
+
+    & .info {
+        position: relative;
+
+        padding: 30px 30px 40px;
+
+        & .price {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1;
+
+            position: absolute;
+            top: 0;
+            right: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 70px;
+            height: 70px;
+            margin: 0;
+
+            transform: translateY(-50%);
+
+            color: $white;
+            border-radius: 50%;
+            background-color: $primary;
+        }
+
+        & .date {
+            font-size: 15px;
+            font-weight: 500;
+
+            display: block;
+
+            margin: 0 0 4px;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: $secondary-light;
+        }
+
+        & .title {
+            font-size: 24px;
+            line-height: 1.5;
+
+            margin: 0;
+
+            color: $secondary;
+
+            & a {
+            }
+        }
+
+        & .desc {
+            margin-top: 10px;
+        }
+
+        & .meta {
+            font-size: 14px;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            margin-top: 30px;
+            margin-bottom: 0;
+            padding-left: 0;
+
+            list-style: none;
+
+            & li {
+                margin-right: 28px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                & i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        background-color: $white;
+        box-shadow: 0 14px 59px rgba($black, 0.12);
+
+        & .thumbnail {
+            & .image {
+                & img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+/* 04.05 Call Out CSS */
+
+.call-out-content{
+    padding: 100px 0;
+    // Responsive
+    @media #{$tablet-device} {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    @media #{$large-mobile} {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .sub-title{
+        display: block;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: $white;
+        margin-bottom: 25px;
+        mark{
+            color: $primary;
+            font-weight: 700;
+            background-color: transparent;
+        }
+    }
+    .title{
+        font-size: 68px;
+        line-height: 1.27;
+        color: $white;
+        margin-bottom: 35px;
+        // Responsive
+        @media #{$desktop-device}{
+            font-size: 60px;
+        }
+        @media #{$large-mobile}{
+            font-size: 40px;
+        }
+        @media #{$extra-small-mobile}{
+            font-size: 32px;
+        }
+    }
+}
+
+.call-out-image{
+    text-align: center;
+    padding-top: 30px;
+    // Responsive
+    @media #{$tablet-device}{
+        padding-top: 0;
+    }
+    @media #{$large-mobile}{
+        padding-top: 0;
+    }
+}

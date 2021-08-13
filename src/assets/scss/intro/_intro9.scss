@@ -1,0 +1,139 @@
+/* 06.09. Home Nine Intro CSS */
+
+.intro9-section {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+.intro9-content {
+    max-width: 680px;
+    width: 100%;
+    float: right;
+    padding-left: 110px;
+    // Responsive
+    @media #{$desktop-device}{
+        padding-left: 30px;
+    }
+    @media #{$tablet-device}{
+        padding-left: 0px;
+    }
+    @media #{$large-mobile}{
+        padding-left: 0;
+        float: inherit;
+        margin: 60px auto 45px;
+        text-align: center;
+    }
+    @media #{$extra-small-mobile}{
+        padding-left: 0;
+        float: inherit;
+        margin: 60px auto 0px;
+        text-align: center;
+    }
+
+    & .sub-title{
+        display: block;
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 500;
+        color: $primary;
+        margin-bottom: 20px;
+        // Responsive
+        @media #{$tablet-device}{
+            font-size: 22px;
+        }
+        @media #{$extra-small-mobile}{
+            font-size: 20px;
+        }
+    }
+    & .title {
+        font-size: 48px;
+        line-height: 56px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $secondary;
+        max-width: 470px;
+        // Responsive
+        @media #{$tablet-device}{
+            font-size: 38px;
+        }
+        @media #{$large-mobile}{
+            font-size: 38px;
+            margin: 0 auto;
+        }
+        @media #{$extra-small-mobile}{
+            font-size: 26px;
+            line-height: 40px;
+            margin: 0 auto;
+        }
+    }
+
+    & .desc {
+        max-width: 400px;
+        margin-top: 12px;
+        // Responsive
+        @media #{$large-mobile}{
+            margin: 0 auto;
+            margin-top: 12px;
+        }
+
+        & p {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.67;
+            color: #8c89a2;
+        }
+    }
+
+    & .btn {
+        margin-top: 35px;
+    }
+}
+
+
+.intro9-image{
+    position: relative;
+    margin-top: 40px;
+}
+.inner-img-one {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    @media #{$large-mobile}{
+        & img {
+            width: 400px;
+        }
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+    }
+}
+.inner-img-two {
+    @media #{$large-mobile}{
+        margin: auto !important;
+        text-align: center;
+        & img {
+            max-width: 254px;
+        }
+    }
+}
+
+.worldRotate {
+    -webkit-animation: worldRotate 20s linear infinite;
+    animation: worldRotate 20s linear infinite;
+}
+
+/*--- spinner keyframe ---*/
+@keyframes worldRotate {
+	0% { 	
+        transform: rotate(0deg) translateX(0px) rotate(0deg); 
+    }
+	100% { 
+        transform: rotate(0deg) translateY(0px) rotate(-360deg); 
+    }
+}

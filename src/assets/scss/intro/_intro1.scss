@@ -1,0 +1,203 @@
+/* 06.01. Home One Intro CSS */
+
+.intro1-section {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 820px;
+    padding: 50px 0;
+
+    // Responsive
+    @media #{$large-mobile}{
+        background-image: none !important;
+        background-color: #eae1d6;
+    }
+
+    & .container {
+        z-index: 9;
+    }
+
+    & .section-bottom-shape {
+        transform: rotateX(180deg);
+    }
+
+    @media #{$desktop-device,
+    $tablet-device
+    } {
+        height: 750px;
+    }
+
+    @media #{$large-mobile} {
+        height: auto;
+
+        background-position: left top;
+    }
+}
+
+.intro1-content {
+    & .sub-title {
+        font-weight: 700;
+        line-height: 2;
+
+        display: block;
+
+        margin-bottom: 18px;
+
+        letter-spacing: 4px;
+        text-transform: uppercase;
+
+        color: $secondary;
+    }
+
+    & .title {
+        font-size: 63px;
+        line-height: 1.13;
+
+        color: $secondary;
+    }
+
+    & .desc {
+        max-width: 540px;
+        margin-top: 12px;
+
+        & p {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.67;
+        }
+    }
+
+    & .btn {
+        margin-top: 28px;
+    }
+
+    @media #{$desktop-device} {
+        & .title {
+            font-size: 54px;
+        }
+
+        & .desc {
+            & p {
+                font-size: 17px;
+            }
+        }
+    }
+
+    @media #{$tablet-device,
+    $large-mobile
+    } {
+        & .sub-title {
+            font-size: 13px;
+
+            letter-spacing: 3px;
+        }
+
+        & .title {
+            font-size: 40px;
+        }
+
+        & .desc {
+            & p {
+                font-size: 16px;
+            }
+        }
+    }
+
+    @media #{$extra-small-mobile} {
+        & .sub-title {
+            font-size: 12px;
+
+            margin-bottom: 10px;
+
+            letter-spacing: 2px;
+        }
+
+        & .title {
+            font-size: 30px;
+        }
+
+        & .desc {
+            & p {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.intro1-course {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+
+    & .popular-course-icon {
+        z-index: 9;
+
+        align-self: flex-end;
+        flex: 0 0 auto;
+
+        margin-right: 20px;
+        margin-bottom: 100px;
+        margin-left: auto;
+    }
+
+    & .course,
+    & .course-2 {
+        min-width: 320px;
+        max-width: 370px;
+        // Responsive
+        @media #{$extra-small-mobile}{
+            min-width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    & .intro1-scene {
+        position: absolute;
+        z-index: -1;
+        right: -45px;
+        bottom: -45px;
+
+        width: 136px;
+    }
+
+    @media #{$desktop-device} {
+        & .popular-course-icon {
+            width: 100px;
+        }
+    }
+
+    @media #{$tablet-device} {
+        & .popular-course-icon {
+            width: 90px;
+            margin-right: -30px;
+            margin-left: -60px;
+        }
+    }
+
+    @media #{$large-mobile} {
+        & .popular-course-icon {
+            width: 120px;
+        }
+    }
+
+    @media #{$small-mobile} {
+        & .popular-course-icon {
+            width: 100px;
+            margin-right: -20px;
+        }
+    }
+
+    @media #{$extra-small-mobile} {
+        & .popular-course-icon {
+            position: absolute;
+            top: -30px;
+            left: 0;
+
+            width: 100px;
+        }
+    }
+}

@@ -1,0 +1,198 @@
+/* 08.07. Course Seven CSS */
+
+.course7-animation-shape{
+    position: relative;
+    z-index: 9;
+
+    & .shape {
+        position: absolute;
+        z-index: -1;
+
+        &-1 {
+            top: 150px;
+            right: 0;
+            transform: translate(50%,0px);
+            width: 735px;
+
+            & svg {
+                width: 100%;
+                height: 100%;
+                transform: rotate(21deg) scale(1,-1);
+
+                & * {
+                    fill: #fefaf7;
+                }
+            }
+        }
+
+        &-2 {
+            bottom: 15%;
+            left: 0;
+            transform: translate(-50%,0px);
+            width: 728px;
+
+            & svg {
+                width: 100%;
+                height: 100%;
+                transform: rotate(-35deg) scale(-1,1);
+
+                & * {
+                    fill: #ebf7fd;
+                }
+            }
+        }
+
+        &-3 {
+            z-index: -1;
+            top: 0px;
+            right: 15px;
+            transform: rotate(90deg) translate(150%,0%);
+            transform-origin: top right;
+            .title{
+                font-size: 180px;
+                line-height: .9;
+                -webkit-text-stroke-color: #f4ebe2;
+                -webkit-text-fill-color: rgba(0,0,0,0);
+                -webkit-text-stroke-width: 2px;
+            }
+        }
+    }
+
+    // Responsive
+    @media #{$laptop-device}{
+        & .shape {
+            display: none;
+        }
+    }
+    @media #{$desktop-device}{
+        & .shape {
+            display: none;
+        }
+    }
+    @media #{$tablet-device}{
+        & .shape {
+            display: none;
+        }
+    }
+    @media #{$large-mobile}{
+        & .shape {
+            display: none;
+        }
+    }
+}
+
+.course-7 {
+    overflow: hidden;
+
+    height: 100%;
+
+    transition: $transition;
+    background-color: $white;
+
+    &.course-fluid{
+        & .info{
+            padding: 26px 0 20px;
+            max-width: 100%;
+            border: 0;
+        }
+        &:hover{
+            & .info{
+                transform: none;
+                box-shadow: none;
+            }
+        }
+    }
+    & .thumbnail {
+        position: relative;
+        overflow: hidden;
+
+        & .image {
+            display: block;
+
+            & img {
+                width: 100%;
+                transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+    }
+
+    & .info {
+        max-width: calc(100% - 30px);
+        padding: 24px 25px 28px;
+        border: 2px solid transparent;
+        transition: $transition;
+
+        & .price {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+
+            display: inline-flex;
+
+            margin: 0 0 12px;
+
+            color: $primary-three;
+
+            & span {
+                font-size: 18px;
+
+                align-self: flex-end;
+            }
+        }
+
+        & .title {
+            font-size: 20px;
+            line-height: 1.6;
+
+            margin: 0;
+
+            & a {
+                &:hover{
+                    color: $primary-three;
+                }
+            }
+        }
+
+        & .meta {
+            font-size: 14px;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            margin-top: 30px;
+            margin-bottom: 0;
+            padding-left: 0;
+
+            list-style: none;
+
+            & li {
+                margin-right: 28px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                & i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        & .thumbnail {
+            & .image {
+                & img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        & .info{
+            border-color: $primary-three;
+            background: $white;
+            box-shadow: 0 2px 26px rgba(0,0,0,.08);
+            transform: translate(0px,-41px);
+        }
+    }
+}

@@ -1,0 +1,120 @@
+.header-language {
+    position: relative;
+
+    display: block;
+
+    padding: 10px;
+
+    & > a {
+        font-weight: 600;
+
+        display: flex;
+        align-items: center;
+
+        text-transform: uppercase;
+
+        & img {
+            width: 30px;
+        }
+
+        & .text {
+            line-height: 1;
+
+            display: block;
+
+            padding-top: 3px;
+            padding-right: 7px;
+            padding-left: 10px;
+        }
+
+        & i {
+            font-size: 14px;
+        }
+    }
+
+    &:hover {
+        & > a {
+            color: $primary;
+        }
+
+        & .language-list {
+            visibility: visible;
+
+            transform: translateY(0);
+
+            opacity: 1;
+        }
+    }
+
+    & .language-list {
+        position: absolute;
+        z-index: 102;
+        top: 100%;
+        right: 0;
+        left: 0;
+
+        visibility: hidden;
+
+        min-width: 200px;
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        transition: $transition;
+        transform: translateY(20px);
+
+        opacity: 0;
+        background-color: $white;
+        box-shadow: 0 0 37px rgba($black, 0.07);
+
+        & li {
+            & a {
+                font-size: 14px;
+                font-weight: 600;
+
+                display: flex;
+                align-items: center;
+
+                padding: 10px;
+
+                text-transform: uppercase;
+
+                color: $heading-color;
+
+                & img {
+                    width: 25px;
+                }
+
+                & .text {
+                    line-height: 1;
+
+                    display: block;
+
+                    padding-top: 3px;
+                    padding-right: 7px;
+                    padding-left: 10px;
+                }
+
+                &:hover {
+                    color: $heading-color;
+                    background-color: $light;
+                }
+            }
+        }
+    }
+}
+
+.header-light {
+    & .header-language {
+        & > a {
+            color: $white;
+        }
+
+        &:hover {
+            & > a {
+                color: $white;
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+/* 08.05. Course Five CSS */
+
+.course-5 {
+    overflow: hidden;
+
+    height: 100%;
+
+    transition: $transition;
+    background-color: $white;
+
+    & .thumbnail {
+        position: relative;
+        overflow: hidden;
+
+        & .image {
+            display: block;
+
+            & img {
+                width: 100%;
+
+                transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+    }
+
+    & .info {
+        padding: 16px 0 10px;
+
+        & .title {
+            font-size: 18px;
+            line-height: 1.78;
+            font-weight: 500;
+            color: $heading-color;
+            margin: 0;
+
+            & a {
+                display: block;
+                &:hover{
+                    color: $primary-two;
+                }
+            }
+        }
+
+        & .price {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+
+            display: inline-flex;
+
+            margin: 15px 0 0;
+
+            color: $primary-two;
+
+            & span {
+                align-self: flex-end;
+            }
+        }
+    }
+
+    &:hover {
+        & .thumbnail {
+            & .image {
+                & img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+/* 04.18 Pagination CSS */
+
+.pagination {
+    flex-wrap: wrap;
+
+    &.center {
+        justify-content: center;
+    }
+
+    & li {
+        & a {
+            font-size: 16px;
+            font-weight: 800;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 48px;
+            padding: 10px 15px;
+
+            text-transform: uppercase;
+
+            color: #ABABAB;
+            border-radius: 50%;
+
+            &:not(.prev):not(.next) {
+                width: 48px;
+            }
+
+            &:hover {
+                color: $heading-color;
+            }
+
+            &.active {
+                cursor: default;
+                pointer-events: none;
+
+                color: $heading-color;
+                background-color: #EEEEEE;
+            }
+        }
+    }
+}

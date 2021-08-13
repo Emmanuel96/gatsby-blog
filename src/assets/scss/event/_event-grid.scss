@@ -1,0 +1,283 @@
+/* 10.01. Event Grid CSS */
+
+.event {
+    overflow: hidden;
+
+    height: 100%;
+
+    transition: $transition;
+
+    border-radius: 5px;
+    background-color: #FAF8F6;
+    &.primary-three{
+        & .thumbnail {
+            & .event-overlay-background{
+                background-color:rgba(106,197,241,.6);
+            }
+            & .event-overlay-content{
+                .btn{
+                    color: $primary-three !important;
+                }
+            }
+        }
+        & .info {
+            & .date {
+                color: $primary-three;
+            }
+    
+            & .title {
+                color: $secondary;
+                & a {
+                    &:hover{
+                        color: $primary-three;
+                    }
+                }
+            }
+    
+            & .event-location {
+                font-size: 17px;
+    
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 25px;
+                margin-bottom: 0;
+                padding-left: 0;
+    
+                list-style: none;
+    
+                & li {
+                    margin-right: 28px;
+    
+                    &:last-child {
+                        margin-right: 0;
+                    }
+    
+                    & i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    & .thumbnail {
+        position: relative;
+        overflow: hidden;
+        & .image {
+            display: block;
+
+            & img {
+                width: 100%;
+
+                transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+        & .event-overlay-background{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(63,58,100,.6);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+
+        }
+        & .event-overlay-content{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            left: 0;
+            text-align: center;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    & .info {
+        position: relative;
+        text-align: center;
+        padding: 30px 30px 40px;
+
+        & .date {
+            font-size: 15px;
+            font-weight: 500;
+
+            display: block;
+
+            margin: 0 0 4px;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: $primary;
+        }
+
+        & .title {
+            font-size: 20px;
+            line-height: 1.5;
+
+            margin: 0;
+
+            color: $secondary;
+
+            & a {
+            }
+        }
+
+        & .event-location {
+            font-size: 17px;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 25px;
+            margin-bottom: 0;
+            padding-left: 0;
+
+            list-style: none;
+
+            & li {
+                margin-right: 28px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                & i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        background-color: $white;
+        box-shadow: 0 14px 59px rgba($black, 0.12);
+
+        & .thumbnail {
+            & .image {
+                & img {
+                    transform: scale(1.1);
+                }
+            }
+            .event-overlay-background{
+                opacity: 1;
+                visibility: visible;
+            }
+            .event-overlay-content{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.single-event-classic{
+    overflow: hidden;
+    height: 100%;
+    transition: $transition;
+    // Responsive
+    @media #{$tablet-device}{
+        margin-bottom: 30px;
+    }
+    @media #{$large-mobile}{
+        margin-bottom: 30px;
+    }
+
+    & .event-image {
+        position: relative;
+
+        overflow: hidden;
+
+        & .image {
+            display: block;
+
+            & img {
+                width: 100%;
+
+                transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+    }
+
+    & .event-info{
+        display: flex;
+        // Responsive
+        @media #{$extra-small-mobile}{
+            flex-wrap: wrap;
+        }
+        .event-date{
+            display: flex;
+            margin: -50px 26px 0 20px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100px;
+            width: 100px;
+            background: #f1f4f2;
+            margin-right: 26px;
+            flex-shrink: 0;
+            .event-date-day{
+                font-size: 48px;
+                line-height: .8;
+                font-family: $playfair-font;
+                font-style: italic;
+                font-weight: 700;
+                color: $primary-two;
+                margin-bottom: 15px;
+            }
+            .event-date-month{
+                font-size: 15px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                line-height: 1;
+                color: $secondary;
+            }
+        }
+        .event-caption{
+            padding: 20px 0 0;
+            // Responsive
+            @media #{$extra-small-mobile}{
+                padding-left: 20px;
+            }
+            .title{
+                font-size: 23px;
+                line-height: 1.5;
+                font-weight: 500;
+                color: $secondary;
+                margin: 0;
+                a{
+                    &:hover{
+                        color: $primary-two;
+                    }
+                }
+            }
+            .event-location{
+                margin: 14px 0 0;
+                i{
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    &:hover {
+
+        & .event-image {
+            & .image {
+                & img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+

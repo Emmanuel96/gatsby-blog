@@ -1,0 +1,363 @@
+/* 12.04 Profile CSS */
+
+.profile-image{
+    // Responsive
+    @media #{$large-mobile}{
+        margin-bottom: 30px;
+    }
+    img{
+
+    }
+}
+
+.profile-info{
+    .profile-name{
+        font-size: 34px;
+        line-height: 1.42;
+        margin: 0;
+    }
+    h5{
+        font-size: 24px;
+    }
+    .author-bio{
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+    .profile-contact-title{
+        font-size: 18px;
+        margin: 36px 0 10px;
+    }
+    .contact-info-text{
+        .email{
+            margin-top: 10px;
+        }
+        strong{
+            color: $heading-color;
+        }
+    }
+}
+
+.author-social-networks{
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+    li{
+        display: inline-block;
+        margin: 10px 10px 0 0;
+        a{
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #ededed;
+            border-radius: 50%;
+            text-align: center;
+            &:hover{
+                background-color: $primary;
+                border-color: transparent;
+                color: $white;
+            }
+        }
+    }
+}
+
+
+.learn-press-profile-nav{
+    border-bottom: 2px solid #eee;
+    margin-bottom: 15px;
+    li{
+        a{
+            position: relative;
+            padding: 3px 18px;
+            color: #ababab;
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+            // Responaive
+            @media #{$small-mobile}{
+                font-size: 18px;
+                padding: 3px 10px;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                height: 2px;
+                width: 100%;
+                left: 0;
+                background-color: $primary;
+                opacity: 0;
+            }
+            &:hover{
+                color: $heading-color;
+            }
+            &.active{
+                color: $heading-color;
+                &::after{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.profile-progress-status{
+    margin-top: 80px;
+    // Responsive
+    @media #{$desktop-device}{
+        margin-top: 60px;
+    }
+    @media #{$tablet-device}{
+        margin-top: 40px;
+    }
+    @media #{$large-mobile}{
+        margin-top: 30px;
+    }
+}
+.status-box{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: $white;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 26px 10px 26px 30px;
+    margin: 0 0 30px;
+    box-shadow: 0 0 40px rgba(51,51,51,.1);
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 3px;
+        background: #111;
+    }
+    .status-number{
+        flex-shrink: 0;
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 1;
+        color: #20ad96;
+        margin: 0 26px 0 0;
+    }
+    .status-text{
+        flex-grow: 1;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.56;
+        margin: 0;
+        max-width: 130px;
+    }
+    &.success{
+        &::before{
+            background: #8fd6ca;
+        }
+        .status-number{
+            color: $primary;
+        }
+    }
+    &.warning{
+        &::before{
+            background: #f5dbaf;
+        }
+        .status-number{
+            color: #ebb860;
+        }
+    }
+    &.info{
+        &::before{
+            background: #b8c3f3;
+        }
+        .status-number{
+            color: #7288e8;
+        }
+    }
+    &.error{
+        &::before{
+            background: #efadb5;
+        }
+        .status-number{
+            color: #df5b6c;
+        }
+    }
+}
+
+.profile-courses-progress{
+    margin-top: 35px;
+    .title{
+        font-size: 34px;
+        line-height: 1.42;
+        margin-bottom: 33px;
+    }
+}
+
+.maxcoach-progress{
+    max-width: 570px;
+}
+
+.progress-charts{
+    overflow: hidden;
+    .title{
+        font-size: 18px;
+        font-weight: 600;
+        color: $secondary;
+        margin: 0 0 16px;
+    }
+    .progress{
+        height: 32px;
+        border-radius: 30px;
+        background: #f2f2f2;
+        padding: 6px;
+        .progress-bar{
+            overflow: visible;
+            position: relative;
+            background: $primary;
+            height: 100%;
+            border-radius: inherit;
+
+            span{
+                &.percent-label{
+                    position: absolute;
+                    color: #fff;
+                    right: 15px;
+                    top: 1px;
+                    font-size: 12px;
+                    font-weight: 700;
+                }
+            }
+        }
+
+    }
+}
+
+
+
+.lp-tab-menu{
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    li{
+        display: inline-block;
+        a{
+            position: relative;
+            padding: 8px 10px;
+            line-height: 1;
+            box-shadow: none;
+            &::after{
+                content: '';
+                background-color: $primary;
+                height: 1px;
+                width: 100%;
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                opacity: 0;
+            }
+            &:hover{
+                color: $primary;
+            }
+            &.active{
+                color: $primary;
+                &::after{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+.lp-sub-menu{
+    margin: 20px 0 20px;
+    text-align: center;
+    li{
+        display: inline-block;
+        margin: 0 5px;
+        a{
+
+        }
+    }
+}
+.scroll{
+    // Responsive
+    @media #{$tablet-device}{
+        overflow-x: auto;
+    }
+    @media #{$large-mobile}{
+        overflow-x: auto;
+    }
+}
+.lp-list-table {
+	border: none;
+	width: 100%;
+    margin-bottom: 20px;
+    // Responsive
+    @media #{$tablet-device}{
+        width: 900px;
+    }
+    @media #{$large-mobile}{
+        width: 800px;
+    }
+    thead{
+        tr{
+            th{
+                background-color: #111111;
+                font-size: 16px;
+                padding: 15px;
+                line-height: 1;
+                text-align: left;
+                border-bottom: none;
+                color: $white;
+                text-transform: capitalize;
+            }
+        }
+    }
+    tbody{
+        tr{
+            td{
+                border-bottom: 1px solid #ddd;
+                font-size: 14px;
+                background: #fff;
+                padding: 10px 20px;
+                border-color: #f3f3f3;
+            }
+        }
+    }
+    tfoot{
+        tr{
+            td{
+                border: 0;
+                border-bottom: 1px solid #f3f3f3;
+                padding: 10px 20px;
+            }
+        }
+    }
+}
+
+.lp-label {
+    font-size: 12px;
+    display: inline-block;
+    color: $white;
+	height: 28px;
+	line-height: 28px;
+	padding: 0 10px;
+	border-radius: 5px;
+	margin-right: 6px;
+    background: #111;
+    &.label-passed{
+        background-color: #14c4ff;
+    }
+    &.label-failed{
+        background-color: #ff4d66;
+    }
+    &.label-completed{
+        background-color: #ffdc1e;
+        color: #111111;
+    }
+}
+
+.result-percent{
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    min-width: 40px;
+    display: inline-block;
+}

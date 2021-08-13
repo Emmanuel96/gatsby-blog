@@ -1,0 +1,125 @@
+/* 08.01. Course One CSS */
+
+.course {
+    overflow: hidden;
+
+    height: 100%;
+
+    transition: $transition;
+
+    border-radius: 5px;
+    background-color: $white;
+
+    & .thumbnail {
+        position: relative;
+
+        & .badge {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            height: 37px;
+            padding: 12px 10px 10px;
+
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+
+            color: $white;
+            border-radius: 0;
+            background: #EE7455;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                right: 100%;
+
+                width: 0;
+                height: 0;
+
+                content: "";
+
+                border-top: 19px solid #EE7455;
+                border-bottom: 19px solid #EE7455;
+                border-left: 13px solid transparent;
+            }
+        }
+
+        & .image {
+            display: block;
+
+            & img {
+                width: 100%;
+            }
+        }
+    }
+
+    & .info {
+        padding: 30px;
+
+        & .price {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1;
+
+            display: inline-flex;
+
+            margin: 0 0 12px;
+
+            color: $primary;
+
+            & span {
+                font-size: 18px;
+
+                align-self: flex-end;
+            }
+        }
+
+        & .title {
+            font-size: 20px;
+            line-height: 1.6;
+
+            margin: 0;
+
+            & a {
+            }
+        }
+
+        & .meta {
+            font-size: 14px;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            margin-top: 30px;
+            margin-bottom: 0;
+            padding-left: 0;
+
+            list-style: none;
+
+            & li {
+                margin-right: 28px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                & i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    &.box-shadow{
+        &:hover{
+            box-shadow: 0 0 30px rgba(0,0,0,.08);
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 14px 59px rgba($black, 0.12);
+    }
+}

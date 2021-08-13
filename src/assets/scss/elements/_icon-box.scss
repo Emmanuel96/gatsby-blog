@@ -1,0 +1,232 @@
+/* 04.14 Icon Box CSS */
+
+.icon-box {
+    position: relative;
+    display: block;
+
+    padding: 40px 20px 30px;
+
+    transition: $transition;
+    border-radius: 5px;
+    z-index: 99;
+    &.icon-box-left{
+        padding: 0;
+        &:hover{
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+    &.h5-icon-box{
+        padding: 0;
+
+        & .content {
+            & .title {
+                font-size: 20px;
+                color: $heading-color;
+            }
+
+            & .link {
+                justify-content: center;
+                width: 100%;
+                padding: 0 20px;
+                min-height: 40px; 
+                background-color: transparent;  
+                border-radius: 5px;
+                color: $secondary-light;
+                transition: $transition;
+    
+                & i {
+                    font-size: 16px;
+                    line-height: 14px;
+    
+                    margin-left: 14px;
+                }
+            }
+        }
+
+        &:hover {
+            z-index: 1;
+    
+            background-color: $white;
+            box-shadow: none;
+    
+            & .content {
+                & .link {
+                    background-color: #f8f8f8; 
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    & .icon {
+        margin-bottom: 24px;
+
+        & svg {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    & .content {
+        & .title {
+            font-size: 24px;
+            line-height: 1.5;
+
+            margin: 0;
+
+            color: $secondary;
+            &.fz-20{
+                font-size: 20px;
+            }
+        }
+
+        & .desc {
+            margin-top: 10px;
+
+            & p {
+                line-height: 1.6;
+
+                color: $body-color;
+            }
+        }
+
+        & .link {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1;
+
+            display: inline-flex;
+            align-items: center;
+
+            margin-top: 34px;
+            padding: 5px 0;
+
+            color: $secondary-light;
+
+            & i {
+                font-size: 16px;
+                line-height: 14px;
+
+                margin-left: 14px;
+            }
+        }
+    }
+
+    &:hover {
+        z-index: 1;
+
+        background-color: $white;
+        box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+
+        & .content {
+            & .link {
+                color: $primary;
+            }
+        }
+    }
+}
+
+.health-icon-box {
+    position: relative;
+    display: block;
+
+    padding: 30px;
+
+    transition: $transition;
+    z-index: 99;
+
+    & .icon {
+        margin-bottom: 40px;
+        // Responsive
+        @media #{$large-mobile}{
+            margin-bottom: 20px;
+        }
+        img{
+
+        }
+    }
+
+    & .content {
+        & .title {
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 600;
+            margin: 0;
+
+            color: $secondary;
+            // Responsive
+            @media #{$large-mobile}{
+                font-size: 22px;
+            }
+        }
+
+        & .desc {
+            margin-top: 15px;
+
+            & p {
+                font-size: 18px;
+                line-height: 1.67;
+
+                color: $body-color;
+            }
+        }
+    }
+
+    &:hover {
+        z-index: 1;
+
+        background-color: $white;
+        box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+    }
+}
+
+.icon-box-list{
+    display: flex;
+    align-items: flex-start;
+    .icon{
+        margin-right: 35px;
+        & svg{
+            width: 48px;
+            height: 48px;
+        }
+    }
+    .content{
+        flex-grow: 1;
+        & .title {
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 600;
+            margin: 0;
+            color: $heading-color;
+        }
+
+        & .desc {
+            margin-top: 10px;
+
+            & p {
+                line-height: 1.6;
+                color: $body-color;
+            }
+        }
+    }
+}
+
+
+.potentials-image{
+    text-align: right;
+    margin-right: -75px;
+    // Responsive
+    @media #{$laptop-device}{
+        margin-right: 0;
+    }
+    @media #{$desktop-device}{
+        margin-right: 0;
+    }
+    @media #{$tablet-device}{
+        margin-right: 0;
+    }
+    @media #{$large-mobile}{
+        margin-right: 0;
+    }
+}

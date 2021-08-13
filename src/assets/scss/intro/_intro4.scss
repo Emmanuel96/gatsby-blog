@@ -1,0 +1,94 @@
+/* 06.04. Home Four Intro CSS */
+
+.intro4-section {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    padding: 270px 0 248px;
+
+    // Responsive
+    @media #{$desktop-device}{
+        padding: 170px 0;
+    }
+    @media #{$tablet-device}{
+        padding: 170px 0;
+    }
+    @media #{$large-mobile}{
+        padding: 100px 0 130px;
+    }
+
+    & .container {
+        z-index: 9;
+    }
+
+}
+
+.ah-headline.rotate-2 i{
+    font-style: normal !important;
+}
+.intro4-content {
+
+    & .title {
+        font-size: 56px;
+        line-height: 1.29;
+        font-weight: 500;
+        color: $white;
+        span{
+            color: $primary;
+            b{
+                font-weight: 500;
+                i{
+                   em{
+                       font: inherit;
+                   } 
+                }
+            }
+        }
+    }
+
+    p{
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.78;
+        color: $white;
+        margin-bottom: 45px;
+    }
+
+    & .btn {
+        margin: 0 10px;
+        // Responsive
+        @media #{$small-mobile}{
+            margin: 0px 5px;
+        }
+        @media #{$extra-small-mobile}{
+            margin: 10px 0px;
+        }
+    }
+
+    @media #{$desktop-device} {
+        & .title {
+            font-size: 54px;
+        }
+    }
+
+    @media #{$tablet-device,
+    $large-mobile
+    } {
+
+        & .title {
+            font-size: 46px;
+        }
+    }
+
+    @media #{$extra-small-mobile} {
+
+        & .title {
+            font-size: 46px;
+        }
+        
+        & p{
+            margin-bottom: 20px;
+        }
+    }
+}

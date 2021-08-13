@@ -1,0 +1,53 @@
+.freecourse-popup-image {
+}
+
+.freecourse-popup-content {
+    text-align: center;
+
+    & .sub-title {
+        font-size: 18px;
+        line-height: 1;
+
+        margin-bottom: 14px;
+
+        letter-spacing: 3px;
+        text-transform: uppercase;
+
+        color: $primary;
+    }
+
+    & .title {
+        font-size: 44px;
+        line-height: 1.4;
+
+        margin-bottom: 20px;
+
+        color: $secondary;
+    }
+
+    @media #{$tablet-device,
+    $large-mobile
+    } {
+        & .sub-title {
+            font-size: 16px;
+
+            letter-spacing: 2px;
+        }
+
+        & .title {
+            font-size: 30px;
+        }
+    }
+
+    @media #{$extra-small-mobile} {
+        & .sub-title {
+            font-size: 14px;
+
+            letter-spacing: 1px;
+        }
+
+        & .title {
+            font-size: 24px;
+        }
+    }
+}

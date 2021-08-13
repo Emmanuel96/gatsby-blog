@@ -28,8 +28,6 @@ query MyQuery($id: String) {
       }
     }
   }
-  
-  
 `
 
   

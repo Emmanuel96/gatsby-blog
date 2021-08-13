@@ -1,0 +1,96 @@
+/* 04.02 Brand CSS */
+
+.brand-list{
+    .brand{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        &.brand-colored{
+            a{
+                img{
+                    opacity: 1;
+                    transition: all .25s cubic-bezier(.645,.045,.355,1);
+                }
+            }
+            &:hover{
+                a{
+                    img{
+                        filter: brightness(100%) contrast(100%) saturate(1%) blur(0px) hue-rotate(0deg);
+                    }
+                }
+            }
+
+        }
+        a{
+            display: block;
+            img{
+                opacity: .5;
+            }
+        }
+        &:hover{
+            a{
+                img{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.brand-title{
+    max-width: 590px;
+    margin: 0 auto;
+    margin-top: 45px;
+    text-align: center;
+    .title{
+        font-family: $playfair-font;
+        font-size: 24px;
+        font-weight: 400;
+        font-style: italic;
+        line-height: 2;
+        letter-spacing: .71px;
+        margin-bottom: 0;
+        // Responsive
+        @media #{$large-mobile}{
+            font-size: 18px;
+        }
+    }
+}
+
+.brand-shape-animation{
+    position: relative;
+    z-index: 9;
+    & .shape {
+        position: absolute;
+        z-index: -1;
+
+        &-1 {
+            top: 0px;
+            right: -20px;
+        }
+    }
+    // Responsive
+    @media #{$laptop-device}{
+        & .shape{
+            top: 40px;
+            right: 0px;
+        }
+    }
+    @media #{$desktop-device}{
+        & .shape{
+            top: 40px;
+            right: 0px;
+        }
+    }
+    @media #{$tablet-device}{
+        & .shape{
+            top: 40px;
+            right: 0px;
+        }
+    }
+    @media #{$large-mobile}{
+        & .shape{
+            display: none;
+        }
+    }
+}

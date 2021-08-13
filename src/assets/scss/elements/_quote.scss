@@ -1,0 +1,94 @@
+/* 04.19 Quote CSS */
+
+.success-quote-heading{
+    padding: 38px 0 0 45px;
+    background-image: url("../../../assets/images/icons/testimonial-icon.png");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: auto;
+    // Responsive
+    @media #{$tablet-device}{
+        padding-left: 0;
+    }
+    @media #{$large-mobile}{
+        padding-left: 0;
+    }
+    .title{
+        font-size: 24px;
+        line-height: 36px;
+        max-width: 370px;
+        // Responsive
+        @media #{$tablet-device}{
+            max-width: 100%;
+        }
+        @media #{$large-mobile}{
+            max-width: 100%;
+        }
+        span{
+            color: $primary;
+        }
+    }
+}
+
+.success-quote-content{
+    padding-top: 35px;
+}
+
+
+.artist-quote-left{
+    text-align: center;
+    // Responsive
+    @media #{$tablet-device}{
+        margin-bottom: 50px;
+    }
+    @media #{$large-mobile}{
+        margin-bottom: 50px;
+    }
+    .quote-image{
+        margin-bottom: 25px;
+    }
+    .quote-content{
+        .title{
+            font-size: 48px;
+            line-height: 1.34;
+            font-weight: 700;
+            margin-bottom: 30px;
+            // Responsive
+            @media #{$tablet-device}{
+                font-size: 40px;
+            }
+            @media #{$large-mobile}{
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+        }
+        .artist-name{
+            h3{
+                font-family: $rossela-font;
+                font-size: 48px;
+                font-weight: 400;
+                color: $secondary-three;
+                // Responsive
+                @media #{$large-mobile}{
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+}
+
+.artist-quote-right{
+    p{
+        font-size: 18px;
+        line-height: 1.67;
+        color: $heading-color;
+        margin-bottom: 30px;
+    }
+    .btn{
+        border-color: transparent;
+        color: $primary-three;
+        &:hover{
+            color: $white;
+        }
+    }
+}

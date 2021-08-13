@@ -1,0 +1,243 @@
+/* 10.02. Event List CSS */
+
+.event-list-box{
+    position: relative;
+    display: block;
+    background: #f8f8f8;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 100%;
+    transition: $transition;
+    &::before{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 3px;
+        background: #20ad96;
+        opacity: 0;
+        transition: $transition;
+    }
+    .event-caption{
+        position: relative;
+        display: flex;
+        padding: 31px;
+        // Responsive
+        @media #{$extra-small-mobile}{
+            flex-wrap: wrap;
+        }
+        .left-box{
+            flex-grow: 1;
+            margin-right: 30px;
+            // Responsive
+            @media #{$extra-small-mobile}{
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .event-location{
+                font-size: 14px;
+                color: #7e7e7e;
+                margin: 0 0 7px;
+                i{
+                    margin-right: 5px;
+                }
+            }
+            .title{
+                font-size: 20px;
+                line-height: 1.5;
+                margin: 0;
+            }
+        }
+        .right-box{
+            flex-shrink: 0;
+            .event-date{
+                text-align: center;
+                margin: 0 0 10px;
+                // Responsive
+                @media #{$extra-small-mobile}{
+                    text-align: left;
+                }
+                .event-date-day{
+                    font-size: 48px;
+                    font-weight: 400;
+                    line-height: 1;
+                    color: $primary;
+                }
+                .event-date-month{
+                    font-size: 15px;
+                    font-weight: 700;
+                    line-height: 1;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    color: $heading-color;
+                }
+            }
+        }
+    }
+    &:hover{
+        background: #fff;
+        box-shadow: 0 0 40px rgba(51,51,51,.1);
+        &::before{
+            opacity: 1;
+        }
+    }
+}
+
+.single-event-classic-list{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .event-image{
+        flex: 0 0 36.333333%;
+        max-width: 36.333333%;
+        overflow: hidden;
+        // Responsive
+        @media #{$extra-small-mobile}{
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        & .image {
+            display: block;
+            overflow: hidden;
+
+            & img {
+                width: 100%;
+
+                transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+        & .event-date{
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.5;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: $primary-two;
+            background: #f1f4f2;
+            padding: 4px 0 1px;
+            text-align: center;
+        }
+    }
+    .event-info{
+        flex: 0 0 63.666667%;
+        max-width: 63.666667%;
+        padding-left: 30px;
+        // Responsive
+        @media #{$extra-small-mobile}{
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+        .title{
+            font-size: 18px;
+            line-height: 1.78;
+            font-weight: 500;
+            color: $secondary;
+            margin: 0;
+            a{
+                &:hover{
+                    color: $primary-two;
+                }
+            }
+        }
+        .event-location{
+            font-size: 14px;
+            color: #7e7e7e;
+            margin-top: 14px;
+            i{
+                margin-right: 5px;
+            }
+        }
+    }
+    &:hover{
+        & .event-image {
+            & .image {
+                & img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+
+.event-list{
+    display: flex;
+    align-items: center;
+    &.right-style{
+        flex-direction: row-reverse;
+        .info{
+            padding: 0 45px 0 0;
+            text-align: right;
+            // Responsive
+            @media #{$tablet-device}{
+                padding: 0 20px 0 0;
+            }
+            @media #{$large-mobile}{
+                padding: 0 20px 0 0;
+            }
+        }
+    }
+    .thumbnail{
+        position: relative;
+        overflow: hidden;
+        .image{
+            display: block;
+            & img {
+                width: 100%;
+
+                transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+    }
+    .info{
+        padding: 0 0 0 45px;
+        // Responsive
+        @media #{$tablet-device}{
+            padding: 0 0 0 20px;
+        }
+        @media #{$large-mobile}{
+            padding: 0 0 0 20px;
+        }
+        .date{
+            display: block;
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 0 6px;
+        }
+        .title{
+            font-size: 20px;
+            line-height: 1.5;
+            font-weight: 700;
+            margin: 0;
+            a{
+                &:hover{
+                    color: $primary-three;
+                }
+            }
+        }
+        .event-location{
+            padding-left: 0;
+            list-style: none;
+            margin: 14px 0 0;
+            font-size: 14px;
+            i{
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &:hover{
+        & .thumbnail {
+            & .image {
+                & img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

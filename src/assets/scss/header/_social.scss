@@ -1,0 +1,43 @@
+/* 05.08 Header Social CSS */
+
+.header-social {
+    display: flex;
+    flex-wrap: wrap;
+
+    & a {
+        padding: 0 10px;
+
+        & i {
+            font-size: 18px;
+            line-height: 30px;
+        }
+    }
+
+    @media #{$large-mobile} {
+        & a {
+            padding: 0 6px;
+
+            & i {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.header-light {
+    & .header-social {
+        & a {
+            color: $white;
+        }
+    }
+}
+
+.header-orange {
+    & .header-social {
+        & a {
+            &:hover{
+                color: $primary-three;
+            }
+        }
+    }
+}

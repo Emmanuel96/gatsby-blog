@@ -1,0 +1,111 @@
+/* 06.03. Home Three Intro CSS  */
+
+.intro3-section {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    padding: 240px 0;
+
+    // Responsive
+    @media #{$desktop-device}{
+        padding: 170px 0;
+    }
+    @media #{$tablet-device}{
+        padding: 150px 0;
+    }
+    @media #{$large-mobile}{
+        padding: 120px 0;
+    }
+
+    & .container {
+        z-index: 9;
+    }
+
+}
+
+.intro3-content {
+    & .sub-title {
+        font-size: 34px;
+        line-height: 1;
+        font-weight: 700;
+        color: $white;
+        display: block;
+        font-family: $heading-font;
+        margin-bottom: 10px;
+    }
+
+    & .title {
+        font-size: 64px;
+        line-height: 1;
+        font-weight: 400;
+        color: $white;
+    }
+
+    & .desc {
+        max-width: 540px;
+        margin-top: 12px;
+
+        & p {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.67;
+        }
+    }
+
+    & .btn {
+        margin-top: 28px;
+    }
+
+    @media #{$desktop-device} {
+        & .title {
+            font-size: 54px;
+        }
+
+        & .desc {
+            & p {
+                font-size: 17px;
+            }
+        }
+    }
+
+    @media #{$tablet-device,
+    $large-mobile
+    } {
+        & .sub-title {
+            font-size: 26px;
+
+            letter-spacing: 3px;
+        }
+
+        & .title {
+            font-size: 46px;
+        }
+
+        & .desc {
+            & p {
+                font-size: 16px;
+            }
+        }
+    }
+
+    @media #{$extra-small-mobile} {
+        & .sub-title {
+            font-size: 26px;
+
+            margin-bottom: 10px;
+
+            letter-spacing: 2px;
+        }
+
+        & .title {
+            font-size: 34px;
+        }
+
+        & .desc {
+            & p {
+                font-size: 14px;
+            }
+        }
+    }
+}

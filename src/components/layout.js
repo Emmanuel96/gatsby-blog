@@ -1,11 +1,15 @@
 import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import {container, 
-        heading, 
-        navLinks, 
-        navLinkItem, 
-        siteTitle,
-        navLinkText} from './layout.module.css'
+import { useStaticQuery, graphql } from 'gatsby'
+import {container} from './layout.module.css'
+import { Helmet } from "react-helmet"
+
+import "../assets/css/vendor/vendor.min.css"
+import "../assets/css/plugins/plugins.min.css"
+import "../assets/css/style.min.css"
+import "../stylesheets/style.css"
+import "../dashboard/assets/fonts/font-awesome/css/font-awesome.min.css"
+import Nav from '../components/nav'
+import Scripts from '../components/scripts'
 
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -18,24 +22,43 @@ const Layout = ({ pageTitle, children }) => {
             }
         `)
     return (
-        <div className={container}>
-            <title>{ data.site.siteMetadata.title }</title>
-            <header className={siteTitle}>{ data.site.siteMetadata.title }</header>
-            <nav>
-                <ul className={navLinks}>
-                    <li className={navLinkItem}>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li className={navLinkItem}>
-                        <Link className={navLinkText} to="/blog">Blog Page</Link>
-                    </li>
-                </ul>
-            </nav>
-            <main>
-                <h1 className={heading}>{ pageTitle }</h1>
-                {children}
-            </main> 
-        </div>
+        <>
+            <Helmet>
+                <meta charset="utf-8"/>
+                <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+                <link href="../assets/images/favicon.png"/>
+                <title>Procause Blog</title>
+                <meta name="robots" content="noindex, follow" />
+                <meta name="description" content=""/>
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+                <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"/>
+                {/* <script src="https://code.jquery.com/jquery-3.6.0.js"></script> */}
+            </Helmet>
+
+            <Nav/>
+            <div className="page-title-section section">
+                <div className="page-title">
+                    <div className="container">
+                        <h1 className="title">Procause Blog</h1>
+                    </div>
+                </div>
+                <div className="page-breadcrumb">
+                    <div className="container">
+                        <ul className="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li className="current">Blogs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div className={container}>
+                <main>
+                    {children}
+                </main> 
+            </div>
+        </>
     )
 }
 

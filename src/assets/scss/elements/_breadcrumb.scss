@@ -1,0 +1,58 @@
+/* 04.03 Breadcrumb CSS */
+
+.breadcrumb {
+    padding: 12px 0;
+
+    background-color: transparent;
+
+    & li {
+        font-size: 14px;
+        line-height: 1.67;
+
+        display: flex;
+
+        color: $heading-color;
+
+        & + li {
+            &::before {
+                margin: 0 15px;
+
+                content: "/";
+
+                color: $body-color;
+            }
+        }
+
+        & a {
+            position: relative;
+
+            display: block;
+
+            color: $body-color;
+
+            &::before {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+
+                width: 0;
+                height: 1px;
+
+                content: "";
+                transition: $transition;
+
+                background-color: $heading-color;
+            }
+
+            &:hover {
+                color: $heading-color;
+
+                &::before {
+                    left: 0;
+
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

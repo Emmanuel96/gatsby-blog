@@ -1,0 +1,204 @@
+/* 04.22 Tooltip CSS */
+
+[class*="hintT"] {
+    position: relative;
+    z-index: 9;
+
+    &::before {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.3;
+
+        position: absolute;
+        z-index: 9;
+
+        visibility: hidden;
+
+        padding: 8px 10px;
+
+        content: attr(data-hint);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+        white-space: nowrap;
+        white-space: nowrap;
+        text-transform: initial;
+        pointer-events: none;
+
+        opacity: 0;
+        color: $white;
+        border-radius: 4px;
+        background: $heading-color;
+        box-shadow: 4px 4px 8px rgba($black, 0.3);
+    }
+
+    &::after {
+        position: absolute;
+        z-index: 9;
+
+        visibility: hidden;
+
+        content: "";
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+
+        opacity: 0;
+        border: 6px solid transparent;
+        background: 0 0;
+    }
+
+    &:hover {
+        z-index: 11;
+
+        &::before,
+        &::after {
+            visibility: visible;
+
+            opacity: 1;
+        }
+    }
+}
+
+/* Position Top */
+.hintT-top {
+    &::before {
+        bottom: 100%;
+        left: 50%;
+
+        transform: translateX(-50%) translateY(4px);
+    }
+
+    &::after {
+        bottom: 100%;
+        left: 50%;
+
+        transform: translateX(-50%) translateY(15px);
+
+        border-top-color: $heading-color;
+    }
+
+    &:hover {
+        &::before {
+            transform: translateX(-50%) translateY(-6px);
+        }
+
+        &::after {
+            transform: translateX(-50%) translateY(5px);
+        }
+    }
+}
+
+/* Position Right */
+.hintT-right {
+    &::before {
+        top: 50%;
+        left: 100%;
+
+        transform: translateY(-50%) translateX(-4px);
+    }
+
+    &::after {
+        top: 50%;
+        left: 100%;
+
+        transform: translateY(-50%) translateX(-15px);
+
+        border-right-color: $heading-color;
+    }
+
+    &:hover {
+        &::before {
+            transform: translateY(-50%) translateX(6px);
+        }
+
+        &::after {
+            transform: translateY(-50%) translateX(-5px);
+        }
+    }
+}
+
+/* Position Bottom */
+.hintT-bottom {
+    &::before {
+        top: 100%;
+        left: 50%;
+
+        transform: translateX(-50%) translateY(-4px);
+    }
+
+    &::after {
+        top: 100%;
+        left: 50%;
+
+        transform: translateX(-50%) translateY(-15px);
+
+        border-bottom-color: $heading-color;
+    }
+
+    &:hover {
+        &::before {
+            transform: translateX(-50%) translateY(6px);
+        }
+
+        &::after {
+            transform: translateX(-50%) translateY(-5px);
+        }
+    }
+}
+
+/* Position Left */
+.hintT-left {
+    &::before {
+        top: 50%;
+        right: 100%;
+
+        transform: translateY(-50%) translateX(4px);
+    }
+
+    &::after {
+        top: 50%;
+        right: 100%;
+
+        transform: translateY(-50%) translateX(15px);
+
+        border-left-color: $heading-color;
+    }
+
+    &:hover {
+        &::before {
+            transform: translateY(-50%) translateX(-6px);
+        }
+
+        &::after {
+            transform: translateY(-50%) translateX(5px);
+        }
+    }
+}
+
+.hintT-primary {
+    &::before {
+        color: $white;
+        background-color: $primary;
+    }
+
+    &.hintT-top {
+        &::after {
+            border-top-color: $primary;
+        }
+    }
+
+    &.hintT-right {
+        &::after {
+            border-right-color: $primary;
+        }
+    }
+
+    &.hintT-bottom {
+        &::after {
+            border-bottom-color: $primary;
+        }
+    }
+
+    &.hintT-left {
+        &::after {
+            border-left-color: $primary;
+        }
+    }
+}
