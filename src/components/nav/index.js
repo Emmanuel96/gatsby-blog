@@ -14,8 +14,8 @@ const Nav = () => {
                         <div className="col-xl-3 col-auto">
                                 <div className="header-logo">
                                     <Link to="/">
-                                        <img className="dark-logo" src={logo1} alt="Learts Logo"/>
-                                        <img className="light-logo" src={logo2} alt="Learts Logo"/>
+                                        {/* <img className="dark-logo" src={logo1} alt="Learts Logo"/>
+                                        <img className="light-logo" src={logo2} alt="Learts Logo"/> */}
                                     </Link>
                                 </div>
                         </div>
@@ -24,13 +24,7 @@ const Nav = () => {
                             <nav className="site-main-menu menu-hover-1">
                                 <ul>
                                     <li className="position-static">
-                                        <Link to="/"><span className="menu-text">How It Works</span></Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/for-businesses"><span className="menu-text">Businesses</span></Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/for-nonprofits"><span className="menu-text">Non-profits</span></Link>
+                                        <Link to="/"><span className="menu-text">Blogs</span></Link>
                                     </li>
                                 </ul>
                             </nav>

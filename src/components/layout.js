@@ -27,30 +27,23 @@ const Layout = ({ pageTitle, children }) => {
                 <meta charset="utf-8"/>
                 <meta http-equiv="x-ua-compatible" content="ie=edge"/>
                 <link href="../assets/images/favicon.png"/>
-                <title>Procause Blog</title>
+                <title>Emmanuel's Blog</title>
                 <meta name="robots" content="noindex, follow" />
                 <meta name="description" content=""/>
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
                 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"/>
-                {/* <script src="https://code.jquery.com/jquery-3.6.0.js"></script> */}
+
             </Helmet>
 
             <Nav/>
             <div className="page-title-section section">
                 <div className="page-title">
                     <div className="container">
-                        <h1 className="title">Procause Blog</h1>
+                        <h1 className="title">Emmanuel's Blog</h1>
                     </div>
                 </div>
-                <div className="page-breadcrumb">
-                    <div className="container">
-                        <ul className="breadcrumb">
-                            <li><a href="index.html">Home</a></li>
-                            <li className="current">Blogs</li>
-                        </ul>
-                    </div>
-                </div>
+                
             </div>
 
             <div className={container}>

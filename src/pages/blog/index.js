@@ -1,9 +1,9 @@
 // Step 1: Import React
 import * as React from 'react'
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 import { graphql, Link } from 'gatsby'
-import blogImage from '../assets/images/blog/770/blog-1.jpg'
-import blogAvatar from "../assets/images/blog/blog-avatar.jpg"
+import blogImage from '../../assets/images/blog/770/blog-1.jpg'
+import blogAvatar from "../../assets/images/blog/blog-avatar.jpg"
 
 // Step 2: Define your component
 const IndexPage = ({data}) => {
