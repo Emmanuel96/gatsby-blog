@@ -26,7 +26,7 @@ const IndexPage = ({data}) => {
                                             </div>
                                             <div className="info">
                                                 <Link to={`/blog/${node.cockpitId}`} className="category">{}</Link>
-                                                <h3 className="title"><Link to="/">{node.title.value}</Link></h3>
+                                                <h3 className="title"><Link to={`/blog/${node.cockpitId}`}>{node.title.value}</Link></h3>
                                                 <ul className="meta">
                                                     <li>
                                                         <Link to={`/blog/${node.cockpitId}`}><img src={blogAvatar} alt="" className="avatar" />{node.author.value}</Link>
@@ -43,47 +43,13 @@ const IndexPage = ({data}) => {
                                                             Read More
                                                         </Link>
                                                     </div>
-                                                    {/* <div className="col-auto">
-                                                        <div className="post-share">
-                                                            <span className="label">Share this post</span>
-                                                        
-                                                        </div>
-                                                    </div> */}
+                              
                                                 </div>
                                             </div>
                                         </div>
                                 ))
                             }
-                            {/* <div className="blog-3 col" data-aos="fade-up">
-                                <div className="thumbnail">
-                                    <Link to="/" className="image"><img src={blogImage} alt="Blog"/></Link>
-                                </div>
-                                <div className="info">
-                                    <Link to="/" className="category">Gym Coaching</Link>
-                                    <h3 className="title"><Link to="/">10 Essential Bodyweight Exercises</Link></h3>
-                                    <ul className="meta">
-                                        <li>
-                                            <Link to="/"><img src={blogAvatar} alt="" className="avatar" />Owen Christ</Link>
-                                        </li>
-                                        <li><i className="far fa-calendar"></i>Apr 06, 2020</li>
-                                        <li><i className="far fa-eye"></i>70 views</li>
-                                    </ul>
-                                    <div className="desc">
-                                        <p>Essential bodyweight exercises are crucial to a well-rounded training routine because they’re versatile and can be done anywhere. …</p>
-                                    </div>
-                                    <div className="row justify-content-between max-mt-30">
-                                        <div className="col-auto">
-                                            <Link to="/" className="btn btn-primary btn-hover-secondary">Read More</Link>
-                                        </div>
-                                        <div className="col-auto">
-                                            <div className="post-share">
-                                                <span className="label">Share this post</span>
-                                              
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> */}
+                           
                         </div>
 
                         <div className="row">
