@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     // siteUrl: "http://localhost:8000",
@@ -17,8 +21,8 @@ module.exports = {
   {
     resolve: '@fika/gatsby-source-cockpit',
     options: {
-      token: 'f38710c37bf97527a0dc3edfb1a0d0',
-      baseUrl:'https://blogadmin.procause.org', // (1)
+      token: process.env.COCKPIT_TOKEN,
+      baseUrl:process.env.COCKPIT_BASE_URL,// (1)
       locales: [], // (2)
       collections: [], // (3)
       singletons: [], // (4)
